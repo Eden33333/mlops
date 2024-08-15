@@ -103,12 +103,29 @@ Vitural environment is for minimumn dependency to install package
 
 ### 2.3 Model Registry
 1. You can regist the model by [this link](https://mlflow.org/docs/latest/model-registry.html) after `mlflow.{}.log_model("",model_param)`
-2. You can also regist model programatically by 'client = mlflow.client()'
+2. You can also regist model programatically by 
+```
+from mlflow.tracking import MlflowClient
+MLFLOW_TRACKING_URI = "sqlite:///mlflow.db"
+client = MlflowClient(tracking_uri = MLFLOW_TRACKING_URI )
+
+experience = client.search_experiments("experience_name")
+runs = client.search_runs(
+    experiment_ids = experience.id,
+    filter_string = "",
+    run_view_type = ViewType.ACTIVE_ONLY,
+    max_results = top_n, # 5-10
+    order_by = ["metrics.val_rmse ASC"]
+    )
+
+
+```
 This is not to deploy the model but is to help you to choose which model is ready to deploy. There are three model versions
 ```
-run_id = "your_uri"
-run_path = f"runs:/{run_id}/model
-mlflow.register_model(run_path,name="modle_name")
+for run in runs:
+  run_id = run.info.run_id
+  run_path = f"runs:/{run_id}/model
+  mlflow.register_model(model_uri = run_path,name="modle_name")
 ```
 ### 2.4 MLclient Class
 This is programatically to help search the model
