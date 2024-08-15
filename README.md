@@ -102,6 +102,8 @@ Vitural environment is for minimumn dependency to install package
   ```
 
 ### 2.3 Model Registry
+1. You can regist the model by [this link](https://mlflow.org/docs/latest/model-registry.html) after `mlflow.{}.log_model("",model_param)`
+2. You can also regist model programatically by 'client = mlflow.client()'
 This is not to deploy the model but is to help you to choose which model is ready to deploy. There are three model versions
 ```
 run_id = "your_uri"
