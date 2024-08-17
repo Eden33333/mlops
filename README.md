@@ -139,3 +139,11 @@ This is programatically to help search the model
 2 run = client.search_run()
 client.get_lastes_version(name = model_name)
 ```
+
+### 2.5 demo
+#### 2.5.1 Config in gcp
+1. cloud storage
+2. sql-postgresql
+3. inistall package  `pip install mlflow psycopg2-binary`
+[This video]("https://www.youtube.com/watch?v=MWfKAgEHsHo") is useful
+   `mlflow server -h 0.0.0.0 -p 5001 --backend-store-uri postgresql://mlflowbackendstored:Ubc202306.7@34.172.211.119:5432/mlflow_backend_stored --default-artifact-root gs://mlflow_artifact_stored`（e.g. mlflow server -h 0.0.0.0 -p 5001 --backend-store-uri postgresql://postgres:iknow@192.168.16.5:5432/mlflow1 --default-artifact-root gs://mlflow_artifact_stored）
