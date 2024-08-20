@@ -16,7 +16,7 @@ Note: `wget` is to download the file
 4. set environment variable
 - navigate to home page `cd ~`
 - modify config file: `nano .bashrc`
-- Add `export path =${HOME}/soft/${PATH}`
+- Add `export PATH=${HOME}/soft:${PATH}` # Case sensitive and there are no spaces before and after assignmnet
 - Execute the code `source bashrc`  # If something wrong with bashrc `cp /etc/skel/.bashrc ~/`
 5. test
 -  `where docker-compose`
