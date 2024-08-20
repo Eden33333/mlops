@@ -1,0 +1,21 @@
+# Anacoda
+1. Initialize anacoda (if you didn't do it in the first case)["https://askubuntu.com/questions/849470/how-do-i-activate-a-conda-environment-in-my-bashrc"]
+`eval "$(conda shell.bash activate)"`
+# docker
+1. Install docker
+  - `sudo apt docker.io` # root to run
+  - create a folder `mkdir soft`
+  - nevigate `cd soft`
+2. Install docker compose
+`wget https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64 -O docker-compose`
+Note: `wget` is to download the file
+3. Make it executable(authorize) ["https://blog.csdn.net/u012106306/article/details/80436911"]
+`chmod +x docker-compose` #grey to green
+4. set environment variable
+- navigate to home page `cd ~`
+- modify config file: `nano .bashrc`
+- Add `export path =${HOME}/soft/${PATH}`
+- Execute the code `source bashrc`  # If something wrong with bashrc `cp /etc/skel/.bashrc ~/`
+5. test
+-  `where docker-compose`
+- `sudo docker run hello-world`
