@@ -1,4 +1,6 @@
 # Anacoda
+1. download ["https://www.anaconda.com/download/success"] `wget link`
+2. `bash `
 1. Initialize anacoda (if you didn't do it in the first case)["https://askubuntu.com/questions/849470/how-do-i-activate-a-conda-environment-in-my-bashrc"]
 `eval "$(conda shell.bash activate)"`
 # docker
